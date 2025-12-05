@@ -15,7 +15,7 @@ export default function NameHover() {
 
   return (
     <motion.h1
-      className="text-5xl font-bold tracking-tight text-foreground w-lg"
+      className="text-3xl md:text-5xl font-bold tracking-tight text-foreground w-sm md:w-lg"
       initial={false}
       onHoverStart={() => setHovered(true)}
       onHoverEnd={() => setHovered(false)}

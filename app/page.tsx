@@ -5,16 +5,16 @@ import { projects } from "@/lib/constants";
 export default function Page() {
   return (
     <div className="w-screen h-screen overflow-hidden flex items-center justify-center">
-      <main className="max-w-3xl space-y-3">
+      <main className="max-w-xs md:max-w-3xl space-y-3">
         <div className="space-y-3">
-          <p className="text-lg text-foreground/80">I&apos;m </p>
+          <p className="text-md md:text-lg text-foreground/80">I&apos;m </p>
           <NameHover />
 
-          <p className="text-lg text-foreground/80">
+          <p className="text-md md:text-lg text-foreground/80">
             Frontend & Design Engineer.
           </p>
 
-          <p className="text-[15px] text-foreground/80 max-w-[48ch] leading-relaxed">
+          <p className="text-[13px] md:text-[15px] text-foreground/80 max-w-fit leading-relaxed">
             Crafting clean, thoughtful and technically solid interfaces.
           </p>
         </div>
