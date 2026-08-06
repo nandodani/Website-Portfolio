@@ -21,7 +21,7 @@ export default function Page() {
 
         <div className="space-y-3 mt-12">
           <p className="text-[11px] uppercase tracking-wide text-muted-foreground">
-            Side Projects
+            My Projects
           </p>
 
           <div className="space-y-4">
