@@ -4,7 +4,7 @@ import { projects } from "@/lib/constants";
 
 export default function Page() {
   return (
-    <div className="w-screen h-screen overflow-hidden flex items-center justify-center">
+    <div className="min-h-dvh flex items-center justify-center px-4 py-24">
       <main className="max-w-xs md:max-w-3xl space-y-3">
         <div className="space-y-3">
           <p className="text-md md:text-lg text-foreground/80">I&apos;m </p>
