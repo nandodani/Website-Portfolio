@@ -19,14 +19,19 @@ export function ModeToggle() {
 
   React.useEffect(() => {
     setMounted(true);
-    clickSounds.current = {
-      on: typeof Audio !== "undefined" ? new Audio("/light-switch-on.mp3") : undefined,
-      off: typeof Audio !== "undefined" ? new Audio("/light-switch-off.mp3") : undefined,
-    };
   }, []);
 
   const handleToggle = () => {
     const nextIsDark = !isDark;
+
+    // Audio elements are created lazily on first toggle so the mp3 files
+    // are only fetched when the user actually interacts.
+    if (!clickSounds.current.on) {
+      clickSounds.current = {
+        on: new Audio("/light-switch-on.mp3"),
+        off: new Audio("/light-switch-off.mp3"),
+      };
+    }
     const sound = nextIsDark ? clickSounds.current.off : clickSounds.current.on;
 
     if (sound) {
@@ -42,7 +47,7 @@ export function ModeToggle() {
       variant="ghost"
       size="icon-lg"
       onClick={handleToggle}
-      aria-label="Toggle theme"
+      aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
       disabled={!mounted}
       className="cursor-pointer"
     >
@@ -55,6 +60,7 @@ export function ModeToggle() {
             exit={{ rotateX: isDark ? 15 : -15, opacity: 0.6 }}
             transition={{ duration: 0.2, ease: "easeInOut" }}
             className="flex items-center justify-center"
+            aria-hidden="true"
           >
             {isDark ? (
               <MdiLightSwitchOff className="h-full w-full" />

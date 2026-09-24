@@ -1,22 +1,32 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@//providers/theme-provider";
+import { ThemeProvider } from "@/providers/theme-provider";
 import Footer from "@/components/footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const description =
+  "Fernando Apóstolo — Frontend & Design Engineer crafting clean, thoughtful and technically solid interfaces.";
 
 export const metadata: Metadata = {
-  title: "Fernando Apóstolo - Portfolio",
-  description: "Fernando Apóstolo - Portfolio",
+  metadataBase: new URL("https://nandodani.dev"),
+  title: "Fernando Apóstolo — Frontend & Design Engineer",
+  description,
+  authors: [{ name: "Fernando Apóstolo", url: "https://nandodani.dev" }],
+  creator: "Fernando Apóstolo",
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    url: "https://nandodani.dev",
+    siteName: "Fernando Apóstolo",
+    title: "Fernando Apóstolo — Frontend & Design Engineer",
+    description,
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Fernando Apóstolo — Frontend & Design Engineer",
+    description,
+    images: ["/opengraph-image.png"],
+  },
 };
 
 export default function RootLayout({
@@ -26,9 +36,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className="antialiased">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

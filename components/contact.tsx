@@ -21,7 +21,8 @@ export default function Contact() {
         whileHover="hover"
       >
         <motion.div
-          className="absolute -left-8 top-1/2 -translate-y-1/2 flex items-center gap-1 pointer-events-none z-20"
+          aria-hidden="true"
+            className="absolute -left-8 top-1/2 -translate-y-1/2 flex items-center gap-1 pointer-events-none z-20"
           variants={{ rest: {}, hover: {} }}
         >
           <motion.div
@@ -68,14 +69,13 @@ export default function Contact() {
 
         <Link
           href="mailto:fernandodaniel.work@gmail.com"
-          target="_blank"
-          className="hover:text-foreground transition-colors"
+          className="hover:text-foreground focus-visible:text-foreground focus-visible:underline underline-offset-4 transition-colors outline-none"
         >
           Email
         </Link>
       </motion.div>
 
-      <span className="text-textDimmed">•</span>
+      <span aria-hidden="true" className="text-muted-foreground/50">•</span>
 
       <motion.div
         className="relative group flex items-center"
@@ -84,7 +84,8 @@ export default function Contact() {
         whileHover="hover"
       >
         <motion.div
-          className="absolute -left-8 top-1/2 -translate-y-1/2 flex items-center gap-1 pointer-events-none z-20"
+          aria-hidden="true"
+            className="absolute -left-8 top-1/2 -translate-y-1/2 flex items-center gap-1 pointer-events-none z-20"
           variants={{ rest: {}, hover: {} }}
         >
           {/* MAIL ICON */}
@@ -133,13 +134,14 @@ export default function Contact() {
         <Link
           href="https://www.linkedin.com/in/nandodani"
           target="_blank"
-          className="hover:text-foreground transition-colors"
+          rel="noopener noreferrer"
+          className="hover:text-foreground focus-visible:text-foreground focus-visible:underline underline-offset-4 transition-colors outline-none"
         >
           LinkedIn
         </Link>
       </motion.div>
 
-      <span className="text-textDimmed">•</span>
+      <span aria-hidden="true" className="text-muted-foreground/50">•</span>
 
       <motion.div
         className="relative group flex items-center"
@@ -148,7 +150,8 @@ export default function Contact() {
         whileHover="hover"
       >
         <motion.div
-          className="absolute -left-8 top-1/2 -translate-y-1/2 flex items-center gap-1 pointer-events-none z-20"
+          aria-hidden="true"
+            className="absolute -left-8 top-1/2 -translate-y-1/2 flex items-center gap-1 pointer-events-none z-20"
           variants={{ rest: {}, hover: {} }}
         >
           <motion.div
@@ -196,7 +199,8 @@ export default function Contact() {
         <Link
           href="https://github.com/nandodani"
           target="_blank"
-          className="hover:text-foreground transition-colors"
+          rel="noopener noreferrer"
+          className="hover:text-foreground focus-visible:text-foreground focus-visible:underline underline-offset-4 transition-colors outline-none"
         >
           GitHub
         </Link>
